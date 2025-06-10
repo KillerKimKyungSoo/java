@@ -43,7 +43,7 @@ public class MyArrayListV4 <E> {
     }
     public E remove(int index) {
         E oldValue = get(index);
-        shiftLeftFrom(index);
+        //shiftLeftFrom(index);
         size--;
         elementData[size] = null;
         return oldValue;
