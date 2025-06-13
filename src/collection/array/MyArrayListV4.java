@@ -43,7 +43,7 @@ public class MyArrayListV4 <E> {
     }
     public E remove(int index) {
         E oldValue = get(index);
-        //shiftLeftFrom(index);
+        shiftLeftFrom(index);
         size--;
         elementData[size] = null;
         return oldValue;
@@ -55,7 +55,11 @@ public class MyArrayListV4 <E> {
             elementData[i] = elementData[i - 1];
         }
     }
-
+    private void shiftLeftFrom(int index) {
+        for (int i = index; i < size - 1; i++) {
+            elementData[i] = elementData[i + 1];
+        }
+    }
     private void grow() {
         int oldCapacity = elementData.length;
         int newCapacity = oldCapacity * 2;
