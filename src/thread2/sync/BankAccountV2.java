@@ -1,16 +1,16 @@
 package thread2.sync;
 
-import static utility.ThreadUtils.*;
-import static utility.MyLogger.*;
+import static utility.MyLogger.log;
+import static utility.ThreadUtils.sleep;
 
-public class BankAccountV1 implements BankAccount{
+public class BankAccountV2 implements BankAccount{
     private int balance;
 
-    public BankAccountV1(int balance) {
+    public BankAccountV2(int balance) {
         this.balance = balance;
     }
     @Override
-    public boolean withdraw(int amount) {
+    public synchronized boolean withdraw(int amount) {
         log("거래시작 : " + getClass().getSimpleName());
         log("검증시작 출금액 : " + amount + ", 잔액 : " + balance);
         if(balance < amount){
@@ -25,7 +25,7 @@ public class BankAccountV1 implements BankAccount{
         return true;
     }
     @Override
-    public int getBalance(){
+    public synchronized int getBalance(){
         return balance;
     }
 }
