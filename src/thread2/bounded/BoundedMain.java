@@ -9,9 +9,10 @@ import static utility.ThreadUtils.*;
 
 public class BoundedMain {
     public static void main(String[] args) {
-        BoundedQueue queue = new BoundedQueueV1(2);
-        //producerFirst(queue);
-        consumerFirst(queue);
+        //BoundedQueue queue = new BoundedQueueV1(2);
+        BoundedQueue queue = new BoundedQueueV3(2);
+        producerFirst(queue);
+        //consumerFirst(queue);
     }
     private static void producerFirst(BoundedQueue queue){
         log("== 생성자 먼저 실행 == 시작, " + queue.getClass().getSimpleName() + " ==");
