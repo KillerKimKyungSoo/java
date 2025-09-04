@@ -10,7 +10,7 @@ import static utility.ThreadUtils.*;
 public class BoundedMain {
     public static void main(String[] args) {
         //BoundedQueue queue = new BoundedQueueV1(2);
-        BoundedQueue queue = new BoundedQueueV3(2);
+        BoundedQueue queue = new BoundedQueueV6_2(2);
         producerFirst(queue);
         //consumerFirst(queue);
     }
